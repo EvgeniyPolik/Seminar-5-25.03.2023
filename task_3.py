@@ -15,3 +15,32 @@
 Не забудьте проверить на числе, которое оканчивается на 0.
 1230 -> 0321
 """
+
+
+def get_int_from_user(message):
+    try:
+        n = int(input(message))
+    except ValueError:
+        return
+    else:
+        return n
+
+
+def get_reverse_digit(num, out_string = ''):
+    out_string += str(num % 10)
+    num //= 10
+    if num == 0:
+        return out_string
+    return get_reverse_digit(num, out_string)
+
+
+def start_app():
+    n = get_int_from_user('Введите ваше число: ')
+    if n is not None:  # 0 Даёт False, но это число
+        result = get_reverse_digit(n)
+        print(f'Число обратное {n} это {result}')
+    else:
+        print('Неверный ввод')
+
+if __name__ == "__main__":
+    start_app()

@@ -16,3 +16,19 @@
 Решите через рекурсию. В задании нельзя применять циклы.
 Допускается исп-е встроенных ф-ций
 """
+
+
+def print_char(begin_num, end_num, iter_number = 1):
+    end_symbol = '\n' if iter_number % 10 == 0 else '\t'
+    if begin_num == end_num + 1:
+        return
+    print(f'{str(begin_num).rjust(3, " ")} - {chr(begin_num)}', end=end_symbol)
+    print_char(begin_num + 1, end_num, iter_number + 1)
+
+
+def start_app():
+    print_char(32, 127)
+
+
+if __name__ == "__main__":
+    start_app()

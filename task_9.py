@@ -27,8 +27,8 @@ def get_sum(a, b):
 
 
 def start_app():
-    a = get_int_from_user('Введите первое слогаемое: ')
-    b = get_int_from_user('Введите второе слогаемое: ')
+    a = get_int_from_user('Введите первое слагаемое: ')
+    b = get_int_from_user('Введите второе слагаемое: ')
     if a is not None and b is not None:
         print(f'Результат a + b = {get_sum(a, b)}')
     else:
